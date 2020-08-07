@@ -19,5 +19,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip3 install jenkins-job-builder
 
+jenkins-jobs --conf jenkins_home/jjb.ini test jobs
+
 jenkins-jobs --conf jenkins_home/jjb.ini update jobs
 ```
