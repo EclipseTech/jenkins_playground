@@ -1,0 +1,12 @@
+- job:
+    name: 'echo'
+    project-type: pipeline
+    pipeline-scm:
+      scm:
+        - git:
+            url: https://github.com/EclipseTech/jenkins_playground.git
+            branches:
+              - '*/master'
+            clean: true
+      script-path: pipeline/echo.groovy
+      lightweight-checkout: true

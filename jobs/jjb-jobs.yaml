@@ -1,0 +1,17 @@
+- job:
+    name: 'jjb-jobs'
+    project-type: freestyle
+    builders:
+      - shell: |-
+          # Normally this would just run, however without proper workers it's just an example
+          echo "jenkins-jobs --log_level debug --conf /var/jenkins_home/jjb.ini update jobs/"
+    scm:
+      - git:
+          branches:
+            - '*/master'
+          url: https://github.com/EclipseTech/jenkins_playground.git
+          wipe-workspace: true
+    triggers:
+      - pollscm:
+          cron: '* * * * *'
+          ignore-post-commit-hooks: false
