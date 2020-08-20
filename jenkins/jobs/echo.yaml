@@ -8,5 +8,5 @@
             branches:
               - '*/master'
             clean: true
-      script-path: pipeline/echo.groovy
+      script-path: jenkins/pipeline/echo.groovy
       lightweight-checkout: true

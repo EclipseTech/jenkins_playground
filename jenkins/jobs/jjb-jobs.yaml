@@ -4,7 +4,7 @@
     builders:
       - shell: |-
           # Normally this would just run, however without proper workers it's just an example
-          echo "jenkins-jobs --log_level debug --conf /var/jenkins_home/jjb.ini update jobs/"
+          cat update-jenkins.sh
     scm:
       - git:
           branches:
